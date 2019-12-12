@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DyssActivity"
+    android:background="@color/dark"
+    android:orientation="vertical"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+    <ImageView
+        android:id="@+id/image_dy_ss"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@mipmap/back2"
+        android:layout_marginLeft="28dp"
+        android:layout_centerVertical="true"
+        />
+    <EditText
+        android:id="@+id/edit_dy_sousuo"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:background="@drawable/sousuoedit"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:paddingLeft="20dp"
+        android:maxLines="1"
+        android:singleLine="true"
+    />
+</RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_dy_sousuo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        ></androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>

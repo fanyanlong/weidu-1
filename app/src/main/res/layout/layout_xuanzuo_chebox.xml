@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="20dp"
+    android:layout_height="20dp">
+
+<CheckBox
+    android:id="@+id/checkbox_xuanzuo"
+    android:layout_width="20dp"
+    android:layout_height="20dp"
+    android:background="@drawable/click_changed"
+    android:layout_marginTop="18dp"
+    android:layout_marginLeft="16dp"
+    android:button="@null"
+
+    />
+</LinearLayout>

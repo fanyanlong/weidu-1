@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GpjlActivity"
+    android:background="@color/back"
+    >
+    <ImageView
+        android:id="@+id/details_back"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
+        android:layout_marginLeft="@dimen/dp_28"
+        android:layout_marginTop="@dimen/dp_16"
+        android:src="@mipmap/back2" />
+    <TextView
+        android:textColor="@color/cardview_light_background"
+        android:text="购票记录"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        android:id="@+id/movie_name_seat"
+        android:layout_marginTop="@dimen/dp_17"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_below="@id/movie_name_seat"
+        android:layout_marginTop="@dimen/dp_21"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab"
+            app:tabTextColor="#fff"
+            app:tabGravity="fill"
+            android:background="@color/blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</RelativeLayout>

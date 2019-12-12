@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".XiangqingActivity"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+
+    >
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            >
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                    android:fitsSystemWindows="true"
+
+                    >
+
+                        <com.facebook.drawee.view.SimpleDraweeView
+                            android:id="@+id/simp_xiangqing"
+                            android:fitsSystemWindows="true"
+                            fresco:placeholderImage="@mipmap/zhanwei"
+                            fresco:failureImage="@mipmap/shibai"
+                            android:layout_width="match_parent"
+                            android:layout_height="500dp"
+                            android:scaleType="centerCrop"
+                            android:src="@mipmap/back"
+                            app:layout_collapseMode="parallax" />
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:gravity="center"
+                            app:layout_collapseMode="pin"
+                            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+
+                            >
+
+                        </androidx.appcompat.widget.Toolbar>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+                        <RelativeLayout
+                            android:background="@color/dark"
+                            android:layout_width="match_parent"
+                            android:layout_height="114dp" >
+                                <CheckBox
+                                    android:button="@null"
+                                    android:id="@+id/checkbox_dy_guanzhu"
+                                    android:layout_width="20dp"
+                                    android:layout_height="19dp"
+                                    android:layout_marginTop="12dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="29dp"
+                                    android:background="@drawable/guanzhu"
+                                    />
+                                <TextView
+                                    android:id="@+id/text_xiangqing_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="20dp"
+                                    android:layout_marginLeft="24dp"
+                                    android:layout_marginTop="20dp"
+                                    android:textColor="@color/white"
+                                    />
+                                <TextView
+                                    android:id="@+id/text_xiangqing_leixing"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="20dp"
+                                    android:layout_marginLeft="24dp"
+                                    android:layout_marginTop="50dp"
+                                    android:textColor="@color/white"
+                                    />
+                                <TextView
+                                    android:id="@+id/text_xiangqing_time"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="20dp"
+                                    android:layout_marginLeft="24dp"
+                                    android:layout_marginTop="77dp"
+                                    android:textColor="@color/white"
+                                    />
+                        </RelativeLayout>
+                        <com.google.android.material.tabs.TabLayout
+                            android:id="@+id/tab_xiangqing"
+                            android:layout_width="match_parent"
+                            android:background="@color/blue"
+                            app:tabTextColor="@color/white"
+                            android:layout_height="44dp">
+
+                        </com.google.android.material.tabs.TabLayout>
+                </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="40dp"
+    app:layout_behavior = "@string/appbar_scrolling_view_behavior"
+    >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewpager_xiangqing"
+                    android:layout_width="match_parent"
+                    android:layout_height="650dp">
+
+                </androidx.viewpager.widget.ViewPager>
+        </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/butt_xiangqing_xyp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="6"
+                    android:text="写影评"
+                    android:background="@color/yellow"
+                    android:textColor="@color/white"
+                    />
+                <Button
+                    android:id="@+id/butt_xiangqing_xz"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="4"
+                    android:text="选座购票"
+                    android:background="@color/lipstick"
+                    android:textColor="@color/white"
+                    />
+        </LinearLayout>
+</RelativeLayout>
+    <!--    <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/butt_xiangqing_xyp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="6"
+                    android:text="写影评"
+                    android:background="@color/yellow"
+                    android:textColor="@color/white"
+                    />
+                <Button
+                    android:id="@+id/butt_xiangqing_xz"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="4"
+                    android:text="选座购票"
+                    android:background="@color/lipstick"
+                    android:textColor="@color/white"
+                    />
+        </LinearLayout>-->
+
+<!--
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+    >
+<com.facebook.drawee.view.SimpleDraweeView
+    android:id="@+id/simp_xiangqing"
+    android:layout_width="match_parent"
+    android:layout_height="499dp"
+    fresco:placeholderImage="@mipmap/zhanwei"
+    fresco:failureImage="@mipmap/shibai"
+    />
+<RelativeLayout
+    android:background="@color/dark"
+    android:layout_width="match_parent"
+    android:layout_height="114dp" >
+        <CheckBox
+            android:button="@null"
+            android:id="@+id/checkbox_dy_guanzhu"
+            android:layout_width="20dp"
+            android:layout_height="19dp"
+            android:layout_marginTop="12dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="29dp"
+            android:background="@drawable/guanzhu"
+            />
+        <TextView
+            android:id="@+id/text_xiangqing_name"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:id="@+id/text_xiangqing_leixing"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="50dp"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:id="@+id/text_xiangqing_time"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="77dp"
+            android:textColor="@color/white"
+            />
+</RelativeLayout>
+<com.google.android.material.tabs.TabLayout
+    android:id="@+id/tab_xiangqing"
+    android:layout_width="match_parent"
+    android:background="@color/blue"
+    app:tabTextColor="@color/white"
+    android:layout_height="44dp">
+
+</com.google.android.material.tabs.TabLayout>
+<androidx.viewpager.widget.ViewPager
+    android:id="@+id/viewpager_xiangqing"
+    android:layout_width="match_parent"
+    android:layout_height="550dp">
+
+</androidx.viewpager.widget.ViewPager>
+</LinearLayout>-->

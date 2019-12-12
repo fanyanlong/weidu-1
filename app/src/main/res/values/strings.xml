@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">维度电影</string>
+    <string name="user_pwd">123</string>
+    <string name="user_email">2556873289@qq.com</string>
+    <string name="xx">
+
+        Handler主要用于线程间的通信。
+一个Handler允许发送和处理Message和Runable对象，UI主线程会自动分配一个Looper（消息轮询器），每个Looper中封装着MessageQueue（消息队列），遵循先进先出原则。Looper负责不断的从自己的消息队列里取出队头的任务或消息执行。一般是在子线程执行完耗时操作之后，通过Handler的sendMessage或post方法将Message和Runable对象传递给MessageQueue，而且在这些对象离开MessageQueue时，Handler负责执行他们（用到handleMessage方法，主要执行刷新UI的代码）。
+其中Message类就是定义了一个信息，这个信息中包含一个描述符和任意的数据对象，这个信息被用来传递给Handler.Message对象提供额外的两个int域和一个Object域。
+
+字面以外加上关联点。
+4除了handler和子线程，还有一个处理线程的是什么，主要方法是什么？（概率60%）
+AsynTask，doInbackGround+onPostExecute
+doInBackground() 这个方法运行在后台线程中，主要负责执行那些很耗时的操作，如访问网络。该方法必须重写。
+onPostExecute(Result) 这个方法运行于UI主线程，在doInBackground(Params…)方法执行后调用，该方法用于接收后台任务执行后返回的结果，刷新UI显示
+5.tcp和udp区别.（概率80%）
+TCP---(长链接)(管发管收,数据安全)传输控制协议,提供的是面向连接、可靠的字节流服务,传输数据前经过“三次握手”建立连接，保证数据传输的可靠性，但效率比较低。一般用于对于数据传输安全性较高的场合。
+UDP---(短连接,只管发,不管收,想聊天就是UDK,丢了几句聊天记录无所谓)用户数据报协议，是一个简单的面向数据报的运输层协议，面向无连接。UDP不提供可靠性，数据传输可能发生错序，丢包，但效率较高。一般用于对于实时性要求较高的场合。
+6线程之间的通信方式（如何避免ANR）（概率70%）
+（1）. AsyncTask，其中doInBackground()和onPostExecute(Result)两个方法非常重要
+doInBackground() 这个方法运行在后台线程中，主要负责执行那些很耗时的操作，如访问网络。该方法必须重写。(其实这个方法就是在子线程中做耗时操作,通过handler发送到onPostExecute)
+onPostExecute(Result) 这个方法运行于UI主线程，在doInBackground(Params…)方法执行后调用，该方法用于接收后台任务执行后返回的结果，刷新UI显示。
+（2.）子线程 + handler
+在子线程中执行完耗时操作需要刷新UI时，通过handler.sendMessage()发消息给主线程， 然后在主线程Handler中的handleMessage()方法中执行刷新UI操作
+7.activity的生命周期（概率80%）
+   (可见安卓开发艺术与探索)  //       开始    重新启动  停止   销毁    暂停
+七个，oncreate，onstart，onrestart，onstop，onresume，ondestroy，onpause；（清楚整个周期的过程）
+1）.启动Activity：系统会先调用onCreate方法，然后调用onStart方法，最后调用onResume，Activity进入运行状态(onStart在页面没有获取焦点之前执行, onResume在页面获取焦点时执行,一般情况下网络请求放在onResume方法中,这样做到目的是负责在当前页面上的页面结束后,当前页面也快及时更新数据)。
+2）.当前Activity被其他Activity覆盖其上或被锁屏：系统会调用onPause方法，暂停当前Activity的执行。
+3）.当前Activity由被覆盖状态回到前台或解锁屏：系统会调用onResume方法，再次进入运行状态。
+4）.当前Activity转到新的Activity界面或按Home键回到主屏，自身退居后台：系统会先调用onPause方法，然后调用onStop方法，进入停滞状态。
+5）.用户后退回到此Activity：系统会先调用onRestart方法，然后调用onStart方法，最后调用onResume方法，再次进入运行状态。
+6）.当前Activity处于被覆盖状态或者后台不可见状态，即第2步和第4步，系统内存不足，杀死当前Activity，而后用户退回当前Activity：再次调用onCreate方法、onStart方法、onResume方法，进入运行状态。
+7）.用户退出当前Activity：系统先调用onPause方法，然后调用onStop方法，最后调用onDestory方法，结束当前Activity。
+Activity 有七个生命周期
+一般情况下创建一个activity首先会执行onCreate,onStart,onResume,onPause,onStop,onDestory,这个时候我们一般将访问网络放在onResume里面,
+onCreate :activity 第一次创建的时候被执行,
+onStart :在启动但没有获取焦点之前执行,无法与用户进行交互
+onResume :在获取到焦点的时候执行,同时可以操作页面
+onPause :activity正在失去焦点的时候执行
+onStop :失去焦点以后执行
+onDestory:页面销毁的时候执行,
+比如刚刚创建一个activity,首先会执行onCreate, onStart, onResume,这个时候跳转到其他activity,当前activity首先会执行onPause, onStop,(但是如果另外一个activity采用了透明的主题,当前activity不会回调onStop),其他activity执行onCreate, onStart, onResume,这个时候结束掉其他activity,当前activity会执行onRestart, onStart, onResume
+
+8.ArrayList和LinkedList区别？数据结构，数据类型（基本，引用），（概率60%）
+存数据，ArrayList数组存储数据，索引值以下标来搜索，查询比较方，删除增加比较麻烦，但是linkedList以链表式存储数据，对于增删比较方便。
+
+ArrayList和LinkedList在性能上各 有优缺点，都有各自所适用的地方，总的说来可以描述如下：
+
+    对ArrayList和LinkedList而言，在列表末尾增加一个元素所花的开销都是固定的。对 ArrayList而言，主要是在内部数组中增加一项，指向所添加的元素，偶尔可能会导致对数组重新进行分配；而对LinkedList而言，这个开销是 统一的，分配一个内部Entry对象。
+    在ArrayList的 中间插入或删除一个元素意味着这个列表中剩余的元素都会被移动；而在LinkedList的中间插入或删除一个元素的开销是固定的。
+    LinkedList不 支持高效的随机元素访问。
+    ArrayList的空 间浪费主要体现在在list列表的结尾预留一定的容量空间，而LinkedList的空间花费则体现在它的每一个元素都需要消耗相当的空间
+    可以这样说：当操作是在一列数据的后面添加数据而不是在前面或中间,并且需要随机地访问其中的元素时,使用ArrayList会提供比较好的性能；当你的操作是在一列数据的前面或中 间添加或删除数据,并且按照顺序访问其中的元素时,就应该使用LinkedList了。
+9.安卓内存的优化？（概率90%）
+http://blog.csdn.net/awangyunke/article/details/20380719
+handler内存泄露（thread， AsyncTask)
+http://www.linuxidc.com/Linux/2013-12/94065.htm
+context内存泄露
+http://blog.sina.com.cn/s/blog_5da93c8f0102w86x.html
+Bitmap内存泄露
+
+1）静态变量引起内存泄露(内存泄露多了就变成溢出)
+在代码优化的过程中，我们需要对代码中的静态变量特别留意。静态变量是类相关的变量，它的生命周期是从这个类被声明，到这个类彻底被垃圾回收器回收才会被销毁。所以，一般情况下，静态变量从所在的类被使用开始就要一直占用着内存空间，直到程序退出。如果不注意，静态变量引用了占用大量内存的资源，造成垃圾回收器无法对内存进行回收，就可能造成内存的浪费
+2）使用Application(单例模式)的Context
+在Android中，Application Context的生命周期和应用的生命周期一样长，而不是取决于某个Activity的生命周期。如果想保持一个长期生命的对象，并且这个对象需要一个 Context，就可以使用Application对象。可以通过调用Context.getApplicationContext()方法或者 Activity.getApplication()方法来获得Application对象。
+3）及时关闭资源
+Cursor是Android查询数据后得到的一个管理数据集合的类。正常情况下，如 果我们没有关闭它，系统会在回收它时进行关闭，但是这样的效率特别低。如果查询得到的数据量较小时还好，如果Cursor的数据量非常大，特别是如果里面 有Blob信息时，就可能出现内存问题。所以一定要及时关闭Cursor。
+4）使用Bitmap及时调用recycle()    // 把 重复循环的方法设置 为 null，释放内存
+前面的章节讲过，在不使用Bitmap对象时，需要调用recycle()释放内存，然后将它设置为null。虽然调用recycle()并不能保证立即释放占用的内存，但是可以加速Bitmap的内存的释放。
+在代码优化的过程中，如果发现某个Activity用到了Bitmap对象，却没有显式的调用recycle()释放内存，则需要分析代码逻辑，增加相关代码，在不再使用Bitmap以后调用recycle()释放内存。
+5）对Adapter进行优化
+下面以构造ListView的BaseAdapter为例说明如何对Adapter进行优化。
+@软引用和弱引用。
+如果一个对象只具有软引用，那么如果内存空间足够，垃圾回收器就不会回收它；如果内存空间不足了，就会回收这些对象的内存。只要垃圾回收器没有回收它，该对象就可以被程序使用。软引用可用来实现内存敏感的高速缓存。软引用可以和一个引用队列（ReferenceQueue）联合使用，如果软引用所引用的对象被垃圾回收，Java虚拟机就会把这个软引用加入到与之关联的引用队列中。
+如果一个对象只具有弱引用，那么在垃圾回收器线程扫描的过程中，一旦发现了只具有弱引用的对象，不管当前内存空间足够与否，都会回收它的内存。不过，由于垃圾回收器是一个优先级很低的线程，因此不一定会很快发现那些只具有弱引用的对象。弱引用也可以和一个引用队列（ReferenceQueue）联合使用，如果弱引用所引用的对象被垃圾回收，Java虚拟机就会把这个弱引用加入到与之关联 的引用队列中。
+弱引用与软引用的根本区别在于：只具有弱引用的对象拥有更短暂的生命周期，可能随时被回收。而只具有软引用的对象只有当内存不够的时候才被回收，在内存足够的时候，通常不被回收。
+6）UI优化
+在Android应用开发过程中，屏幕上控件的布局代码和程序的逻辑代码通常是分开 的。界面的布局代码是放在一个独立的xml文件中的，这个文件里面是树型组织的，控制着页面的布局。通常，在这个页面中会用到很多控件，控件会用到很多的 资源。Android系统本身有很多的资源，包括各种各样的字符串、图片、动画、样式和布局等等，这些都可以在应用程序中直接使用。这样做的好处很多，既 可以减少内存的使用，又可以减少部分工作量，也可以缩减程序安装包的大小。
+10.framgment生命周期？（概率30%）
+oncreate，onstart，onrestart，onstop，onresume，ondestroy，onpause，onAttach，onCreateView，onDettach，onDestroyView;（和activity的生命周期比较，会更好）
+ MyFragment onAttach() 粘贴到activity上
+MyFragment onCreate() fragment创建
+MyFragment onCreateView() fragment创建自己的视图
+    </string>
+</resources>

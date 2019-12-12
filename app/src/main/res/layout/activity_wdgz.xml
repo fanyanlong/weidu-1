@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/dark"
+    tools:context=".WdgzActivity">
+    <RelativeLayout
+        android:id="@+id/write_relation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_22"
+        android:layout_marginLeft="@dimen/dp_24"
+        android:layout_marginTop="@dimen/dp_37"
+        android:layout_marginRight="@dimen/dp_24"
+        android:layout_marginBottom="@dimen/dp_21">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/my_guanzhu_fanhui"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_20"
+            android:background="@mipmap/back2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_22"
+            android:layout_toRightOf="@id/my_guanzhu_fanhui"
+            android:gravity="center"
+            android:text="我的关注"
+            android:textColor="#fff"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/my_guanzhu_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relat3"
+        app:tabSelectedTextColor="#f00"
+        app:tabTextColor="#fff"
+        />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/my_guanzhu_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/xiangqing_tab"
+        android:layout_marginTop="@dimen/dp_20"
+        />
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".YyDypqActivity"
+    android:orientation="vertical"
+    android:background="@color/dark"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    >
+    <ImageView
+        android:id="@+id/image_yypq"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@mipmap/back2"
+        android:layout_marginLeft="28dp"
+        android:layout_centerVertical="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="电影排期"
+        android:layout_centerInParent="true"
+        android:textSize="16sp"
+        android:textColor="@color/white_two"
+        />
+</RelativeLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_yypq"
+        app:tabMode="scrollable"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        app:tabTextColor="@color/white_two"
+        android:background="@color/blue"
+        >
+
+    </com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager_yypq"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></androidx.viewpager.widget.ViewPager>
+</LinearLayout>

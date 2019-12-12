@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/back"
+    android:layout_height="match_parent">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/dark"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <View
+            android:layout_width="22dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/dark"
+            ></View>
+        <RelativeLayout
+            android:background="@color/blue"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            >
+
+
+            <RadioButton
+                android:id="@+id/radio_message"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="8dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/text_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/radio_message"
+                android:padding="3dp"
+                android:text="购票信息"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+
+                />
+
+            <TextView
+                android:id="@+id/text_message2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/white"
+                android:padding="3dp"
+                android:text="13:12"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:id="@+id/text_message3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:padding="3dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/text_message2"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/dark"/>
+</LinearLayout>

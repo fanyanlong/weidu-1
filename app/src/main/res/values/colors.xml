@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="pink">#EB6692</color>
+    <color name="pink_s">#F80054</color>
+    <color name="wepink">#82BD84</color>
+    <color name="back">#141931</color>
+    <color name="colorBlack">#f000</color>
+    <color name="bright_orange">#ff5500</color>
+    <color name="black">#333333</color>
+    <color name="gray">#deaaaaaa</color>
+    <color name="lipstick">#e8185e</color>
+    <color name="desert">#d3af56</color>
+    <color name="white_two">#d8d8d8</color>
+    <color name="warm_blue_0">#004b48d9</color>
+    <color name="yellow">#e8be18</color>
+    <color name="green">#50b674</color>
+    <color name="black_50">#80000000</color>
+    <color name="dark_gray">#999999</color>
+    <color name="blue">#1c2243</color>
+    <color name="white">#ffffff</color>
+    <color name="warm_blue">#504ce2</color>
+    <color name="dark">#141931</color>
+    <color name="reddish_pink">#ff1a67</color>
+</resources>

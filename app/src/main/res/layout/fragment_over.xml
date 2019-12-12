@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recy_dai"
+        android:background="@color/back"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/dp_24"
+        android:layout_marginRight="@dimen/dp_24"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/text"
+        android:layout_centerInParent="true"
+        android:text="无购票记录"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
